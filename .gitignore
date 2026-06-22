@@ -23,3 +23,6 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 .vercel
+
+# Claude Code — overrides locales (no versionar)
+.claude/settings.local.json
