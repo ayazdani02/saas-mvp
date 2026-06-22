@@ -1,0 +1,69 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { 
+	title, 
+	description = "ConfiaLine - El canal de denuncias éticas en el que tu equipo realmente confía. Plataforma 100% independiente y anónima para colaboradores y proveedores. Cumplimiento legal y compliance corporativo avanzado en Latinoamérica." 
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Primary Meta Tags -->
+		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		<meta name="keywords" content="canal de denuncias, compliance latam, ConfiaLine, denuncias anonimas, ley karin chile, compliance mexico, etica corporativa, compliance laboral, canal etico colombia, canal denuncias peru" />
+		<meta name="author" content="ConfiaLine Compliance" />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://confialine.io/" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="https://confialine.io/og-image.png" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="https://confialine.io/" />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content="https://confialine.io/og-image.png" />
+		
+		<!-- Canonical Link -->
+		<link rel="canonical" href="https://confialine.io/" />
+	</head>
+	<body class="bg-bg-base text-slate-800 antialiased selection:bg-almond-cream/40 selection:text-amber-950 overflow-x-hidden">
+		<slot />
+
+		<script>
+			// Premium lightweight Intersection Observer for scroll animation reveals
+			const revealElements = document.querySelectorAll('.reveal');
+			
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('active');
+						observer.unobserve(entry.target);
+					}
+				});
+			}, {
+				rootMargin: '0px 0px -70px 0px', // triggers slightly before entering the viewport
+				threshold: 0.02
+			});
+
+			revealElements.forEach((el) => observer.observe(el));
+		</script>
+	</body>
+</html>

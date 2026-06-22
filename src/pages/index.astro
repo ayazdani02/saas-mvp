@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import PainPoints from '../components/PainPoints.astro';
+import ProductDashboard from '../components/ProductDashboard.astro';
+import ValueProp from '../components/ValueProp.astro';
+import Features from '../components/Features.astro';
+import Security from '../components/Security.astro';
+import FAQ from '../components/FAQ.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="ConfiaLine | Canal de Denuncias Éticas y Compliance Corporativo"
+  description="Plataforma de denuncias éticas 100% independiente, segura y anónima para colaboradores y proveedores. Cumple con la Ley Karin y normativas de compliance de LATAM."
+>
+  <!-- Navigation Header -->
+  <Navbar />
+
+  <!-- Main Scrollable Sections -->
+  <main class="relative">
+    
+    <!-- Hero Section with Custom Chilean/Latin Workspace Image -->
+    <Hero />
+
+    <!-- Customer Pain Points & Legal Requirements -->
+    <PainPoints />
+
+    <!-- Full-width Product Dashboard & Advantages -->
+    <ProductDashboard />
+
+    <!-- Value Propositions (Whistleblower vs Corporate Officer) -->
+    <ValueProp />
+
+    <!-- Product Features and Cryptographical Log Demos -->
+    <Features />
+
+    <!-- Security, Compliance and Sovereign Cloud Specifications -->
+    <Security />
+
+    <!-- Native Accessible FAQ Accordion -->
+    <FAQ />
+    
+  </main>
+
+  <!-- Navigation Footer with badges -->
+  <Footer />
+</Layout>

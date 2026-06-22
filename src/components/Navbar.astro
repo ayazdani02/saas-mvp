@@ -1,0 +1,99 @@
+---
+---
+<header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-white/80 border-b border-dust-grey/40">
+  <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 sm:h-20">
+      <!-- Logo -->
+      <div class="flex-shrink-0 flex items-center gap-2">
+        <a href="#" class="flex items-center gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-almond-cream focus-visible:ring-offset-2 focus-visible:ring-offset-white rounded-md">
+          <svg class="h-6 w-6 sm:h-7 sm:w-7 text-slate-900" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3L19.8 7.5V16.5L12 21L4.2 16.5V7.5L12 3Z" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="12" r="3" fill="currentColor" />
+          </svg>
+          <span class="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 font-serif-title">ConfiaLine</span>
+        </a>
+      </div>
+
+      <!-- Desktop Nav (Excluding Pricing) -->
+      <nav class="hidden md:flex space-x-1 lg:space-x-2">
+        <a href="#dolores" class="px-3.5 py-2 text-sm font-medium text-slate-700 hover:text-slate-950 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-almond-cream">El Problema</a>
+        <a href="#valores" class="px-3.5 py-2 text-sm font-medium text-slate-700 hover:text-slate-950 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-almond-cream">Enfoques</a>
+        <a href="#caracteristicas" class="px-3.5 py-2 text-sm font-medium text-slate-700 hover:text-slate-950 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-almond-cream">Funciones</a>
+        <a href="#seguridad" class="px-3.5 py-2 text-sm font-medium text-slate-700 hover:text-slate-950 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-almond-cream">Seguridad</a>
+        <a href="#faq" class="px-3.5 py-2 text-sm font-medium text-slate-700 hover:text-slate-950 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-almond-cream">Preguntas</a>
+      </nav>
+
+      <!-- Desktop CTAs -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="#canal-demo" class="px-4 py-2 text-sm font-medium text-slate-700 hover:text-slate-950 focus:outline-none focus-visible:ring-2 focus-visible:ring-almond-cream rounded-md">
+          Probar Canal
+        </a>
+        <a href="#demo" class="px-5 py-2.5 text-sm font-semibold text-slate-900 bg-almond-cream hover:bg-almond-cream-hover rounded-md shadow-sm transition duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-almond-cream">
+          Agendar Demo
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button type="button" id="mobile-menu-btn" class="inline-flex items-center justify-center p-2 rounded-md text-slate-600 hover:text-slate-950 hover:bg-floral-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-almond-cream" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Abrir menú principal</span>
+          <svg class="block h-6 w-6" id="menu-icon-closed" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+          <svg class="hidden h-6 w-6" id="menu-icon-opened" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="hidden md:hidden border-b border-dust-grey/40 bg-white/95 backdrop-blur-lg" id="mobile-menu" aria-hidden="true">
+    <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3">
+      <a href="#dolores" class="mobile-nav-link block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-slate-950 hover:bg-floral-white">El Problema</a>
+      <a href="#valores" class="mobile-nav-link block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-slate-950 hover:bg-floral-white">Enfoques</a>
+      <a href="#caracteristicas" class="mobile-nav-link block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-slate-950 hover:bg-floral-white">Funciones</a>
+      <a href="#seguridad" class="mobile-nav-link block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-slate-950 hover:bg-floral-white">Seguridad</a>
+      <a href="#faq" class="mobile-nav-link block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-slate-950 hover:bg-floral-white">Preguntas</a>
+      
+      <div class="pt-4 pb-2 border-t border-dust-grey/40 flex flex-col gap-2.5 px-3">
+        <a href="#canal-demo" class="mobile-nav-link flex items-center justify-center w-full py-2.5 px-4 text-center text-sm font-medium text-slate-700 hover:text-slate-950 hover:bg-floral-white rounded-md">
+          Probar Canal
+        </a>
+        <a href="#demo" class="mobile-nav-link flex items-center justify-center w-full py-3 px-4 text-center text-sm font-semibold text-slate-900 bg-almond-cream hover:bg-almond-cream-hover rounded-md shadow-sm">
+          Agendar Demo
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconClosed = document.getElementById('menu-icon-closed');
+  const iconOpened = document.getElementById('menu-icon-opened');
+  const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+  function toggleMenu() {
+    const isExpanded = mobileMenuBtn?.getAttribute('aria-expanded') === 'true';
+    mobileMenuBtn?.setAttribute('aria-expanded', (!isExpanded).toString());
+    mobileMenu?.setAttribute('aria-hidden', isExpanded.toString());
+    mobileMenu?.classList.toggle('hidden');
+    iconClosed?.classList.toggle('hidden');
+    iconClosed?.classList.toggle('block');
+    iconOpened?.classList.toggle('hidden');
+    iconOpened?.classList.toggle('block');
+  }
+
+  mobileMenuBtn?.addEventListener('click', toggleMenu);
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+        toggleMenu();
+      }
+    });
+  });
+</script>

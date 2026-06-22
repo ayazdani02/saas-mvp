@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Fraunces", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  
+  --color-dust-grey: #dce0d9;
+  --color-floral-white: #fbf6ef;
+  --color-almond-cream: #ead7c3;
+  --color-almond-cream-hover: #dbbe9f;
+  
+  --color-bg-base: #ffffff; /* Forced pure white background */
+  --color-bg-card: #fbf6ef; /* Floral White */
+  --color-bg-card-alt: #ead7c3; /* Almond Cream */
+  --color-border-accent: #dce0d9; /* Dust Grey */
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    background-color: var(--color-bg-base);
+    color: #332f2b; /* Deep warm charcoal/brown for soft B2B readability */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, .font-serif-title {
+    font-family: var(--font-serif);
+    color: #211e1b;
+  }
+  
+  /* Scrollbar matching B2B theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-bg-base);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #dce0d9; /* Dust Grey */
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ead7c3; /* Almond Cream */
+  }
+
+  /* Accessibility focus ring */
+  *:focus-visible {
+    outline: 2px solid var(--color-almond-cream);
+    outline-offset: 4px;
+  }
+
+  a, button, details summary {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Premium Scroll Reveal animations */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Staggered delays for grids/columns */
+  .reveal-delay-100 {
+    transition-delay: 100ms;
+  }
+  .reveal-delay-200 {
+    transition-delay: 200ms;
+  }
+  .reveal-delay-300 {
+    transition-delay: 300ms;
+  }
+  .reveal-delay-400 {
+    transition-delay: 400ms;
+  }
+}
