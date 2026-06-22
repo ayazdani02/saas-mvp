@@ -15,10 +15,20 @@ npm install        # install deps (Node >= 22.12.0 required)
 npm run dev        # dev server at localhost:4321
 npm run build      # static build to ./dist/
 npm run preview    # serve the production build locally
-npm run astro check   # type-check .astro files (tsconfig extends astro/strict)
+npm run check      # type-check .astro files (astro check; tsconfig extends astro/strict)
+npm run format     # format src/ with Prettier (prettier-plugin-astro)
+npm run format:check  # verify formatting without writing
 ```
 
-There is no test suite, linter, or formatter configured. `astro check` is the only verification step.
+There is no test suite or linter. Formatting is Prettier (config in `.prettierrc.json`).
+
+## Verification
+
+Before considering a change done, run the gate:
+
+1. `npm run check` — must pass with no errors.
+2. `npm run build` — must complete the static build.
+3. **Visual check** — this is a marketing landing page, so changes to layout/copy/animations should be eyeballed at `localhost:4321` (`npm run dev`). The Playwright MCP (`.mcp.json`) is available to screenshot the page and check responsive breakpoints and the `reveal` scroll animations.
 
 ## Architecture
 
