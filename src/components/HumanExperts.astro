@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import complianceExperts from '../assets/compliance_experts.png';
 ---
 <section id="expertos" class="py-20 sm:py-28 bg-white border-t border-dust-grey/40 relative">
   <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -6,10 +8,10 @@
       
       <!-- Text Content (Left Column) -->
       <div class="lg:col-span-6 space-y-6 reveal">
-        <h2 class="text-xs font-bold uppercase tracking-wider text-emerald-700 font-mono">Inteligencia Híbrida</h2>
-        <h3 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight text-balance leading-tight">
+        <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 font-mono">Inteligencia Híbrida</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight text-balance leading-tight">
           IA para la automatización, Expertos para la investigación
-        </h3>
+        </h2>
         <p class="text-base text-slate-700 text-pretty leading-relaxed">
           Optimiza tu gestión ética combinando la rapidez de la Inteligencia Artificial con la precisión humana. ConfiaLine te permite estructurar y pre-analizar reportes automáticamente mediante IA, dándote la total flexibilidad para **decidir derivar la investigación y resolución de los casos a nuestro equipo externo de especialistas en compliance y asesoría legal** cuando lo consideres necesario. Una solución híbrida y adaptable, diseñada tanto para PYMEs como para grandes corporaciones.
         </p>
@@ -24,7 +26,7 @@
               </svg>
             </div>
             <div>
-              <h4 class="text-sm font-bold text-slate-900">Automatización inteligente de procesos (IA)</h4>
+              <h3 class="text-sm font-bold text-slate-900">Automatización inteligente de procesos (IA)</h3>
               <p class="text-xs text-slate-500 leading-relaxed mt-1">
                 La IA se encarga del triaje automatizado, estimación del nivel de riesgo, remoción inmediata de metadatos en archivos adjuntos y generación de resúmenes estructurados en segundos.
               </p>
@@ -39,7 +41,7 @@
               </svg>
             </div>
             <div>
-              <h4 class="text-sm font-bold text-slate-900">Investigación y validez jurídica (Humanos)</h4>
+              <h3 class="text-sm font-bold text-slate-900">Investigación y validez jurídica (Humanos)</h3>
               <p class="text-xs text-slate-500 leading-relaxed mt-1">
                 Un equipo de abogados y especialistas multidisciplinarios asume la investigación de los casos que decidas delegar, garantizando absoluta confidencialidad, objetividad y reportes detallados con plena validez.
               </p>
@@ -54,7 +56,7 @@
               </svg>
             </div>
             <div>
-              <h4 class="text-sm font-bold text-slate-900">Cumplimiento blindado bajo Leyes Locales</h4>
+              <h3 class="text-sm font-bold text-slate-900">Cumplimiento blindado bajo Leyes Locales</h3>
               <p class="text-xs text-slate-500 leading-relaxed mt-1">
                 Alineación total con normativas exigentes de LATAM (como la Ley Karin y Ley de Delitos Económicos en Chile), asegurando protocolos correctos de mitigación y protección del colaborador.
               </p>
@@ -67,8 +69,19 @@
       <div class="lg:col-span-6 relative reveal reveal-delay-200">
         <div class="absolute -inset-1.5 bg-dust-grey/30 rounded-2xl blur-lg opacity-40"></div>
         <div class="relative bg-floral-white border border-dust-grey/65 rounded-2xl p-3 shadow-sm overflow-hidden aspect-[1/1] sm:aspect-[4/3] lg:aspect-[1/1] xl:aspect-[4/3]">
-          <!-- Main Photo -->
-          <div class="absolute inset-3 rounded-xl bg-[url('/compliance_experts.png')] bg-cover bg-center"></div>
+          <!-- Main Photo (inset frame preserved: wrapper holds the inset-3 box, image fills it) -->
+          <div class="absolute inset-3 rounded-xl overflow-hidden">
+            <Image
+              src={complianceExperts}
+              alt="Equipo de abogados y especialistas en compliance de ConfiaLine investigando casos de denuncias"
+              width={1024}
+              height={1024}
+              format="webp"
+              quality={72}
+              loading="lazy"
+              class="h-full w-full object-cover object-center"
+            />
+          </div>
           
           <!-- Floating Badge -->
           <div class="absolute bottom-6 right-6 bg-white/95 backdrop-blur-sm border border-slate-200 p-3 rounded-xl shadow-md flex items-center gap-2 max-w-[200px]">

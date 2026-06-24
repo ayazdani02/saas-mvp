@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+	title="Página no encontrada (404) | ConfiaLine"
+	description="La página que buscas no existe o fue movida. Vuelve al inicio de ConfiaLine."
+	noindex={true}
+>
+	<Navbar />
+
+	<main class="min-h-[70vh] flex items-center justify-center px-4 pt-24 pb-16">
+		<div class="text-center max-w-xl mx-auto">
+			<p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-4 font-mono">Error 404</p>
+			<h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-slate-900 leading-tight text-balance mb-5">
+				Esta página no existe
+			</h1>
+			<p class="text-base text-slate-700 leading-relaxed mb-8 text-pretty">
+				Es posible que el enlace esté roto o que la página se haya movido. Te invitamos a volver al inicio para
+				conocer cómo ConfiaLine protege tu canal de denuncias.
+			</p>
+			<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+				<a href="/" class="w-full sm:w-auto px-8 py-3.5 text-base font-semibold text-slate-900 bg-almond-cream hover:bg-almond-cream-hover rounded-md shadow-sm hover:shadow-md text-center transition duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-almond-cream">
+					Volver al inicio
+				</a>
+				<a href="/#faq" class="w-full sm:w-auto px-8 py-3.5 text-base font-semibold text-slate-850 hover:text-slate-950 bg-white hover:bg-floral-white border border-dust-grey hover:border-slate-400 rounded-md text-center transition duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-almond-cream">
+					Ver preguntas frecuentes
+				</a>
+			</div>
+		</div>
+	</main>
+
+	<Footer />
+</Layout>

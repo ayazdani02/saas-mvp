@@ -1,48 +1,129 @@
 ---
 import '../styles/global.css';
+import {
+	SITE_NAME,
+	SITE_TITLE,
+	SITE_DESCRIPTION,
+	SITE_LANG,
+	SITE_LOCALE,
+	OG_IMAGE,
+	OG_IMAGE_ALT,
+	KEYWORDS,
+} from '../consts';
 
 interface Props {
-	title: string;
+	title?: string;
 	description?: string;
+	/** Path or absolute URL of the social share image. */
+	image?: string;
+	imageAlt?: string;
+	/** Set true on utility pages (404, etc.) to keep them out of the index. */
+	noindex?: boolean;
+	type?: 'website' | 'article';
 }
 
-const { 
-	title, 
-	description = "ConfiaLine - El canal de denuncias éticas en el que tu equipo realmente confía. Plataforma 100% independiente y anónima para colaboradores y proveedores. Cumplimiento legal y compliance corporativo avanzado en Latinoamérica." 
+const {
+	title = SITE_TITLE,
+	description = SITE_DESCRIPTION,
+	image = OG_IMAGE,
+	imageAlt = OG_IMAGE_ALT,
+	noindex = false,
+	type = 'website',
 } = Astro.props;
+
+// Canonical + absolute asset URLs, all derived from the single `site` config value.
+const site = Astro.site ?? new URL('https://confialine.vercel.app');
+const canonicalURL = new URL(Astro.url.pathname, site);
+const ogImageURL = new URL(image, site);
+
+// Self-hostable later via Fontsource; for now load Google Fonts non-render-blocking,
+// roman-only (no italics are used) and with the optical-size axis preserved.
+const FONTS_HREF =
+	'https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Plus+Jakarta+Sans:wght@300..800&display=swap';
+
+const robotsContent = noindex
+	? 'noindex, nofollow'
+	: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
+
+// --- Structured data (JSON-LD) ------------------------------------------------
+const organizationSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'Organization',
+	name: SITE_NAME,
+	url: site.href,
+	logo: new URL('/logo.svg', site).href,
+	image: ogImageURL.href,
+	description: SITE_DESCRIPTION,
+	areaServed: ['CL', 'MX', 'CO', 'PE'],
+	knowsLanguage: ['es'],
+	// sameAs: [],            // TODO: add official LinkedIn / X / Instagram URLs when they exist.
+	// contactPoint: { ... }, // TODO: add support email / phone (ContactPoint) when available.
+};
+
+const websiteSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'WebSite',
+	name: SITE_NAME,
+	url: site.href,
+	inLanguage: SITE_LANG,
+	description: SITE_DESCRIPTION,
+};
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={SITE_LANG}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		
+
 		<!-- Primary Meta Tags -->
 		<title>{title}</title>
-		<meta name="title" content={title} />
 		<meta name="description" content={description} />
-		<meta name="keywords" content="canal de denuncias, compliance latam, ConfiaLine, denuncias anonimas, ley karin chile, compliance mexico, etica corporativa, compliance laboral, canal etico colombia, canal denuncias peru" />
-		<meta name="author" content="ConfiaLine Compliance" />
-		
+		<meta name="keywords" content={KEYWORDS} />
+		<meta name="author" content={`${SITE_NAME} Compliance`} />
+		<meta name="robots" content={robotsContent} />
+		<meta name="theme-color" content="#fbf6ef" />
+
+		<!-- Canonical -->
+		<link rel="canonical" href={canonicalURL.href} />
+
+		<!-- Icons & PWA -->
+		<link rel="icon" href="/favicon.ico" sizes="32x32" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+
+		<!-- Fonts — preconnect + non-render-blocking stylesheet -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preload" as="style" href={FONTS_HREF} />
+		<link rel="stylesheet" href={FONTS_HREF} media="print" onload="this.media='all'" />
+		<noscript><link rel="stylesheet" href={FONTS_HREF} /></noscript>
+
 		<!-- Open Graph / Facebook -->
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://confialine.io/" />
+		<meta property="og:type" content={type} />
+		<meta property="og:site_name" content={SITE_NAME} />
+		<meta property="og:locale" content={SITE_LOCALE} />
+		<meta property="og:url" content={canonicalURL.href} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
-		<meta property="og:image" content="https://confialine.io/og-image.png" />
+		<meta property="og:image" content={ogImageURL.href} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content={imageAlt} />
 
 		<!-- Twitter -->
-		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content="https://confialine.io/" />
-		<meta property="twitter:title" content={title} />
-		<meta property="twitter:description" content={description} />
-		<meta property="twitter:image" content="https://confialine.io/og-image.png" />
-		
-		<!-- Canonical Link -->
-		<link rel="canonical" href="https://confialine.io/" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={canonicalURL.href} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImageURL.href} />
+		<meta name="twitter:image:alt" content={imageAlt} />
+
+		<!-- Structured Data -->
+		<script type="application/ld+json" is:inline set:html={JSON.stringify(organizationSchema)} />
+		<script type="application/ld+json" is:inline set:html={JSON.stringify(websiteSchema)} />
 	</head>
 	<body class="bg-bg-base text-slate-800 antialiased selection:bg-almond-cream/40 selection:text-amber-950 overflow-x-hidden">
 		<slot />
@@ -50,7 +131,7 @@ const {
 		<script>
 			// Premium lightweight Intersection Observer for scroll animation reveals
 			const revealElements = document.querySelectorAll('.reveal');
-			
+
 			const observer = new IntersectionObserver((entries) => {
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {

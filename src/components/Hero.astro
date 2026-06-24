@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import latinReporter from '../assets/latin_reporter.png';
+import complianceOfficer from '../assets/compliance_officer.png';
 ---
 <section class="relative pt-24 pb-16 sm:pt-32 sm:pb-24 lg:pt-40 lg:pb-32 overflow-hidden bg-white">
   
@@ -38,7 +41,17 @@
         <!-- Left Panel: Reporter (Chilean woman holding smartphone) -->
         <div class="relative rounded-2xl border border-dust-grey/80 overflow-hidden aspect-[16/10] md:aspect-[16/9.5] shadow-sm group bg-slate-50 flex flex-col justify-between">
           <!-- Background Photo -->
-          <div class="absolute inset-0 bg-[url('/latin_reporter.png')] bg-cover bg-center transition-transform duration-500 group-hover:scale-[1.01]"></div>
+          <Image
+            src={latinReporter}
+            alt="Colaboradora enviando una denuncia anónima desde su smartphone con el canal ético de ConfiaLine"
+            width={1024}
+            height={1024}
+            format="webp"
+            quality={70}
+            loading="eager"
+            fetchpriority="high"
+            class="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.01]"
+          />
           <!-- Dark gradient mask at bottom for text contrast -->
           <div class="absolute inset-0 bg-gradient-to-t from-slate-950/30 via-transparent to-transparent"></div>
 
@@ -71,7 +84,16 @@
         <!-- Right Panel: Compliance Officer (Obscured over-the-shoulder laptop view) -->
         <div class="relative rounded-2xl border border-dust-grey/80 overflow-hidden aspect-[16/10] md:aspect-[16/9.5] shadow-sm group bg-slate-50">
           <!-- Background Photo -->
-          <div class="absolute inset-0 bg-[url('/compliance_officer.png')] bg-cover bg-center transition-transform duration-500 group-hover:scale-[1.01]"></div>
+          <Image
+            src={complianceOfficer}
+            alt="Gestor de compliance revisando el estado de un caso en el panel de ConfiaLine"
+            width={1024}
+            height={1024}
+            format="webp"
+            quality={70}
+            loading="eager"
+            class="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-[1.01]"
+          />
           <!-- Soft mask overlay -->
           <div class="absolute inset-0 bg-gradient-to-t from-slate-950/15 via-transparent to-transparent"></div>
 

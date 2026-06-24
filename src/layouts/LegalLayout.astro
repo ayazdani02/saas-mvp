@@ -1,0 +1,54 @@
+---
+import Layout from './Layout.astro';
+import { SITE_NAME } from '../consts';
+
+interface Props {
+	title: string;
+	description: string;
+	updated?: string;
+}
+
+const { title, description, updated } = Astro.props;
+const year = new Date().getFullYear();
+---
+
+<Layout title={`${title} | ${SITE_NAME}`} description={description}>
+	<header class="border-b border-dust-grey/40 bg-white">
+		<div class="max-w-3xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+			<a href="/" aria-label="ConfiaLine — inicio" class="flex items-center gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-almond-cream rounded-md">
+				<svg class="h-6 w-6 text-slate-900" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M12 3L19.8 7.5V16.5L12 21L4.2 16.5V7.5L12 3Z" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+					<circle cx="12" cy="12" r="3" fill="currentColor" />
+				</svg>
+				<span class="text-xl font-bold tracking-tight text-slate-900 font-serif-title">ConfiaLine</span>
+			</a>
+			<a href="/" class="text-sm font-medium text-slate-700 hover:text-slate-950">← Volver al inicio</a>
+		</div>
+	</header>
+
+	<main class="max-w-3xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+		<h1 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight text-balance mb-3">{title}</h1>
+		{updated && <p class="text-sm text-slate-500 mb-10 font-mono">Última actualización: {updated}</p>}
+
+		<div class="space-y-5 text-sm sm:text-base text-slate-700 leading-relaxed [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-slate-900 [&_h2]:tracking-tight [&_h2]:mt-10 [&_h2]:mb-2 [&_a]:text-emerald-800 [&_a]:underline [&_a]:underline-offset-2 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-1.5 [&_strong]:text-slate-900">
+			<slot />
+		</div>
+
+		<div class="mt-12 pt-6 border-t border-dust-grey/40 text-xs text-slate-500 bg-floral-white/50 rounded-lg p-4">
+			<strong class="text-slate-700">Aviso:</strong> Este documento es una plantilla base orientativa y debe ser
+			revisada y validada por un asesor legal antes de su publicación definitiva, especialmente al iniciar campañas
+			publicitarias o la recolección de datos personales.
+		</div>
+	</main>
+
+	<footer class="border-t border-dust-grey/40 bg-white py-8">
+		<div class="max-w-3xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row gap-3 justify-between items-center text-xs text-slate-500 font-mono">
+			<span>&copy; {year} ConfiaLine Compliance Tech.</span>
+			<span class="flex gap-4">
+				<a href="/privacidad" class="hover:text-slate-900">Privacidad</a>
+				<a href="/terminos" class="hover:text-slate-900">Términos</a>
+				<a href="/" class="hover:text-slate-900">Inicio</a>
+			</span>
+		</div>
+	</footer>
+</Layout>
