@@ -1,6 +1,8 @@
 ---
 import Layout from './Layout.astro';
 import { SITE_NAME } from '../consts';
+import { Image } from 'astro:assets';
+import logoImage from '../assets/logo.png';
 
 interface Props {
 	title: string;
@@ -15,12 +17,8 @@ const year = new Date().getFullYear();
 <Layout title={`${title} | ${SITE_NAME}`} description={description}>
 	<header class="border-b border-dust-grey/40 bg-white">
 		<div class="max-w-3xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
-			<a href="/" aria-label="ConfiaLine — inicio" class="flex items-center gap-2.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-almond-cream rounded-md">
-				<svg class="h-6 w-6 text-slate-900" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M12 3L19.8 7.5V16.5L12 21L4.2 16.5V7.5L12 3Z" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
-					<circle cx="12" cy="12" r="3" fill="currentColor" />
-				</svg>
-				<span class="text-xl font-bold tracking-tight text-slate-900 font-serif-title">ConfiaLine</span>
+			<a href="/" aria-label="ConfiaLine — inicio" class="flex items-center focus:outline-none focus-visible:ring-2 focus-visible:ring-almond-cream rounded-md">
+				<Image src={logoImage} alt="ConfiaLine Logo" class="h-7 w-auto mix-blend-multiply" />
 			</a>
 			<a href="/" class="text-sm font-medium text-slate-700 hover:text-slate-950">← Volver al inicio</a>
 		</div>
