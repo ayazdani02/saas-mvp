@@ -121,23 +121,18 @@
             </div>
           </div>
 
-          <!-- Bottom Grid: Reports List + IA Panel -->
-          <div class="grid grid-cols-1 xl:grid-cols-12 gap-6 items-start">
-            <!-- Table of Reports (Left) -->
-            <div class="xl:col-span-8 border border-dust-grey/65 rounded-xl overflow-hidden bg-white shadow-sm">
-              <div class="px-4 py-3 bg-floral-white/60 border-b border-dust-grey/60 flex justify-between items-center">
-                <span class="text-xs font-bold text-slate-800 font-mono">Bandeja de Entrada de Casos</span>
-                <span class="text-[10px] text-slate-500">Última actualización: hace un momento</span>
-              </div>
-
+          <!-- Bottom Grid: Reports List (Full Width) -->
+          <div class="w-full">
+            <!-- Table of Reports -->
+            <div class="w-full border border-dust-grey/65 rounded-xl overflow-hidden bg-white shadow-sm">
               <!-- Filter Options Row -->
-              <div class="px-4 py-2 bg-slate-50/50 border-b border-dust-grey/40 flex flex-wrap gap-2 items-center justify-between text-[11px]">
+              <div class="px-4 py-3 bg-slate-50/50 border-b border-dust-grey/40 flex flex-wrap gap-2 items-center justify-between text-[11px]">
                 <div class="flex items-center gap-1.5 overflow-x-auto">
                   <span class="text-slate-400 font-mono font-bold uppercase tracking-wider text-[9px] mr-1">Filtros:</span>
-                  <button class="px-2 py-0.5 rounded bg-slate-200 text-slate-800 font-semibold">Todos</button>
-                  <button class="px-2 py-0.5 rounded bg-white border border-dust-grey/50 hover:bg-slate-50 text-slate-650 transition">ConfiaLine (5)</button>
-                  <button class="px-2 py-0.5 rounded bg-white border border-dust-grey/50 hover:bg-slate-50 text-slate-650 transition">Interna (3)</button>
-                  <button class="px-2 py-0.5 rounded bg-white border border-dust-grey/50 hover:bg-slate-50 text-slate-655 transition">Prioridad Alta</button>
+                  <button class="px-2.5 py-1 rounded bg-slate-200 text-slate-800 font-semibold transition">Todos</button>
+                  <button class="px-2.5 py-1 rounded bg-white border border-dust-grey/50 hover:bg-slate-50 text-slate-655 transition">ConfiaLine (5)</button>
+                  <button class="px-2.5 py-1 rounded bg-white border border-dust-grey/50 hover:bg-slate-50 text-slate-655 transition">Interna (3)</button>
+                  <button class="px-2.5 py-1 rounded bg-white border border-dust-grey/50 hover:bg-slate-50 text-slate-655 transition">Prioridad Alta</button>
                 </div>
                 <div class="flex items-center gap-1 font-sans text-slate-500 text-[10px]">
                   <span>Ordenar:</span>
@@ -160,6 +155,7 @@
                       <th class="p-3">Asignación</th>
                       <th class="p-3">Prioridad</th>
                       <th class="p-3">Estado</th>
+                      <th class="p-3 text-right">Acciones</th>
                     </tr>
                   </thead>
                   <tbody class="divide-y divide-dust-grey/30">
@@ -176,6 +172,13 @@
                       <td class="p-3">
                         <span class="px-2 py-0.5 rounded-full text-[9px] font-bold bg-amber-50 text-amber-700 border border-amber-100">Análisis Legal</span>
                       </td>
+                      <td class="p-3 text-right">
+                        <button class="p-1 hover:bg-slate-100 rounded text-slate-400 hover:text-slate-700 transition animate-none" aria-label="Acciones">
+                          <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
+                          </svg>
+                        </button>
+                      </td>
                     </tr>
                     <tr class="hover:bg-floral-white/30 cursor-pointer transition">
                       <td class="p-3 font-mono font-bold text-slate-900">#CFL-172</td>
@@ -189,6 +192,13 @@
                       </td>
                       <td class="p-3">
                         <span class="px-2 py-0.5 rounded-full text-[9px] font-bold bg-blue-50 text-blue-700 border border-blue-100">Triage Inicial</span>
+                      </td>
+                      <td class="p-3 text-right">
+                        <button class="p-1 hover:bg-slate-100 rounded text-slate-400 hover:text-slate-700 transition animate-none" aria-label="Acciones">
+                          <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
+                          </svg>
+                        </button>
                       </td>
                     </tr>
                     <tr class="hover:bg-floral-white/30 cursor-pointer transition">
@@ -204,8 +214,15 @@
                       <td class="p-3">
                         <span class="px-2 py-0.5 rounded-full text-[9px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-100">Dictamen Emitido</span>
                       </td>
+                      <td class="p-3 text-right">
+                        <button class="p-1 hover:bg-slate-100 rounded text-slate-400 hover:text-slate-700 transition animate-none" aria-label="Acciones">
+                          <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
+                          </svg>
+                        </button>
+                      </td>
                     </tr>
-                    <tr class="bg-almond-cream/20 hover:bg-almond-cream/35 cursor-pointer transition border-l-2 border-emerald-600">
+                    <tr class="hover:bg-floral-white/30 cursor-pointer transition">
                       <td class="p-3 font-mono font-bold text-slate-900">#CFL-170</td>
                       <td class="p-3 font-semibold text-slate-800">Uso Indebido de Activos</td>
                       <td class="p-3 text-slate-550">14 Jun 2026</td>
@@ -218,61 +235,19 @@
                       <td class="p-3">
                         <span class="px-2 py-0.5 rounded-full text-[9px] font-bold bg-amber-50 text-amber-700 border border-amber-100">En Investigación</span>
                       </td>
+                      <td class="p-3 text-right">
+                        <button class="p-1 hover:bg-slate-100 rounded text-slate-400 hover:text-slate-700 transition animate-none" aria-label="Acciones">
+                          <svg class="h-4 w-4 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 12.75a.75.75 0 110-1.5.75.75 0 010 1.5zM12 18.75a.75.75 0 110-1.5.75.75 0 010 1.5z" />
+                          </svg>
+                        </button>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
             </div>
-
-            <!-- AI Insights Panel (Right) -->
-            <div class="xl:col-span-4 border border-dust-grey/65 rounded-xl bg-floral-white/30 p-5 space-y-4 flex flex-col justify-between min-h-[460px]">
-              <div class="space-y-4">
-                <div class="flex items-center justify-between pb-3 border-b border-dust-grey/50">
-                  <div class="flex items-center gap-2">
-                    <div class="h-2 w-2 rounded-full bg-amber-500 animate-pulse"></div>
-                    <span class="text-xs font-bold text-slate-850 font-mono">IA RESUMEN E INSIGHTS</span>
-                  </div>
-                  <span class="text-[9px] font-mono bg-amber-50 px-2 py-0.5 rounded text-amber-700 border border-amber-200">Caso Activo #CFL-170</span>
-                </div>
-
-                <!-- Referral Banner Indicator (Internal active) -->
-                <div class="p-2.5 bg-amber-50/40 border border-amber-200/60 rounded-lg flex items-center justify-between text-[11px] text-amber-800">
-                  <div class="flex items-center gap-2 font-semibold">
-                    <span class="h-2 w-2 rounded-full bg-amber-500 animate-pulse"></span>
-                    <span>Gestión Interna (En curso)</span>
-                  </div>
-                  <span class="font-mono text-[9px] px-1.5 py-0.5 bg-amber-100 rounded text-amber-700 font-bold border border-amber-200/40">Investigación</span>
-                </div>
-
-                <div class="space-y-3">
-                  <div class="space-y-1">
-                    <span class="text-[9px] font-mono text-slate-400 font-bold uppercase tracking-wider">Análisis Inteligente</span>
-                    <p class="text-xs text-slate-800 leading-relaxed bg-white p-3 rounded-lg border border-dust-grey/30">
-                      El reporte describe el uso no autorizado de vehículos corporativos fuera de la jornada laboral. Tras revisar bitácoras de GPS, se observa una discrepancia de kilometraje recurrente durante los fines de semana. La IA recomienda citar a entrevista al conductor asignado.
-                    </p>
-                  </div>
-
-                  <div class="space-y-1">
-                    <span class="text-[9px] font-mono text-slate-400 font-bold uppercase tracking-wider">Pasos Recomendados</span>
-                    <ul class="text-xs text-slate-750 space-y-1.5 list-disc pl-4 leading-normal font-sans">
-                      <li>Cotejar bitácoras físicas con registros del dispositivo GPS del vehículo.</li>
-                      <li>Solicitar declaración escrita al colaborador involucrado y su jefatura directa.</li>
-                      <li>Formalizar la amonestación y archivar la resolución del caso.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <!-- View Details Button -->
-              <div class="pt-3 border-t border-dust-grey/40 flex justify-end">
-                <a href="#producto" class="text-[11px] font-bold text-slate-850 hover:text-slate-950 flex items-center gap-1.5 transition">
-                  Ver Ficha del Caso
-                  <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                  </svg>
-                </a>
-              </div>
-            </div>
+          </div>
           </div>
         </div>
       </div>
