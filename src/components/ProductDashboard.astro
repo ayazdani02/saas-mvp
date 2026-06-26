@@ -68,12 +68,12 @@
             <span class="px-2 text-[10px] uppercase font-mono tracking-wider text-slate-400 font-bold">Filtros</span>
             <ul class="space-y-1.5 text-xs text-slate-655 px-2.5">
               <li class="flex items-center gap-2">
-                <span class="h-2.5 w-2.5 rounded-full bg-red-400 flex-shrink-0"></span>
-                <span>Prioridad Alta</span>
+                <span class="h-2.5 w-2.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+                <span>Derivados (Expertos)</span>
               </li>
               <li class="flex items-center gap-2">
-                <span class="h-2.5 w-2.5 rounded-full bg-amber-400 flex-shrink-0"></span>
-                <span>Prioridad Media</span>
+                <span class="h-2.5 w-2.5 rounded-full bg-amber-500 flex-shrink-0"></span>
+                <span>Internos (Comité)</span>
               </li>
               <li class="flex items-center gap-2">
                 <span class="h-2.5 w-2.5 rounded-full bg-slate-300 flex-shrink-0"></span>
@@ -86,7 +86,7 @@
         <!-- Main Dashboard View -->
         <div class="lg:col-span-10 p-6 space-y-6">
           <!-- Stats Row -->
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <!-- Stat 1 -->
             <div class="border border-dust-grey/60 rounded-xl p-4 bg-floral-white/20">
               <span class="block text-[10px] font-mono uppercase tracking-wider text-slate-400 font-bold mb-1">Total Reportes</span>
@@ -97,13 +97,21 @@
             </div>
             <!-- Stat 2 -->
             <div class="border border-dust-grey/60 rounded-xl p-4 bg-floral-white/20">
-              <span class="block text-[10px] font-mono uppercase tracking-wider text-slate-400 font-bold mb-1">En Investigación</span>
+              <span class="block text-[10px] font-mono uppercase tracking-wider text-slate-400 font-bold mb-1">Derivados a Expertos</span>
               <div class="flex items-baseline gap-2">
-                <span class="text-2xl font-bold text-slate-900">4</span>
-                <span class="text-xs font-semibold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-100">Bajo Análisis</span>
+                <span class="text-2xl font-bold text-slate-900">5</span>
+                <span class="text-xs font-semibold text-emerald-750 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-100">2 Activos, 3 Cerrados</span>
               </div>
             </div>
             <!-- Stat 3 -->
+            <div class="border border-dust-grey/60 rounded-xl p-4 bg-floral-white/20">
+              <span class="block text-[10px] font-mono uppercase tracking-wider text-slate-400 font-bold mb-1">Gestión Interna</span>
+              <div class="flex items-baseline gap-2">
+                <span class="text-2xl font-bold text-slate-900">3</span>
+                <span class="text-xs font-semibold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-100">Comité Interno</span>
+              </div>
+            </div>
+            <!-- Stat 4 -->
             <div class="border border-dust-grey/60 rounded-xl p-4 bg-floral-white/20">
               <span class="block text-[10px] font-mono uppercase tracking-wider text-slate-400 font-bold mb-1">Tiempo Medio</span>
               <div class="flex items-baseline gap-2">
@@ -128,8 +136,8 @@
                       <th class="p-3">Código</th>
                       <th class="p-3">Categoría</th>
                       <th class="p-3">Fecha</th>
+                      <th class="p-3">Asignación</th>
                       <th class="p-3">Estado</th>
-                      <th class="p-3">Prioridad</th>
                     </tr>
                   </thead>
                   <tbody class="divide-y divide-dust-grey/30">
@@ -138,10 +146,10 @@
                       <td class="p-3 font-semibold text-slate-800">Conflicto de Interés</td>
                       <td class="p-3 text-slate-550">Ayer</td>
                       <td class="p-3">
-                        <span class="px-2 py-0.5 rounded-full text-[9px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-100">En Investigación</span>
+                        <span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200/60 font-semibold font-mono text-[10px]">Equipo Experto</span>
                       </td>
                       <td class="p-3">
-                        <span class="px-2 py-0.5 rounded-full text-[9px] font-bold bg-amber-50 text-amber-700 border border-amber-100">Media</span>
+                        <span class="px-2 py-0.5 rounded-full text-[9px] font-bold bg-amber-50 text-amber-700 border border-amber-100">Análisis Legal</span>
                       </td>
                     </tr>
                     <tr class="hover:bg-floral-white/30 cursor-pointer transition">
@@ -149,10 +157,21 @@
                       <td class="p-3 font-semibold text-slate-800">Acoso Laboral (Ley Karin)</td>
                       <td class="p-3 text-slate-550">18 Jun 2026</td>
                       <td class="p-3">
-                        <span class="px-2 py-0.5 rounded-full text-[9px] font-bold bg-blue-50 text-blue-700 border border-blue-100">Triaje Inicial</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-50 text-slate-600 border border-slate-200/60 font-medium font-mono text-[10px]">Comité Interno</span>
                       </td>
                       <td class="p-3">
-                        <span class="px-2 py-0.5 rounded-full text-[9px] font-bold bg-red-50 text-red-700 border border-red-100">Alta</span>
+                        <span class="px-2 py-0.5 rounded-full text-[9px] font-bold bg-blue-50 text-blue-700 border border-blue-100">Triage Inicial</span>
+                      </td>
+                    </tr>
+                    <tr class="hover:bg-floral-white/30 cursor-pointer transition">
+                      <td class="p-3 font-mono font-bold text-slate-900">#CFL-171</td>
+                      <td class="p-3 font-semibold text-slate-800">Fraude Financiero</td>
+                      <td class="p-3 text-slate-550">16 Jun 2026</td>
+                      <td class="p-3">
+                        <span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200/60 font-semibold font-mono text-[10px]">Equipo Experto</span>
+                      </td>
+                      <td class="p-3">
+                        <span class="px-2 py-0.5 rounded-full text-[9px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-100">Dictamen Emitido</span>
                       </td>
                     </tr>
                     <tr class="hover:bg-floral-white/30 cursor-pointer transition">
@@ -160,10 +179,10 @@
                       <td class="p-3 font-semibold text-slate-800">Uso Indebido de Activos</td>
                       <td class="p-3 text-slate-550">14 Jun 2026</td>
                       <td class="p-3">
-                        <span class="px-2 py-0.5 rounded-full text-[9px] font-bold bg-slate-50 text-slate-500 border border-slate-200">Resuelto y Cerrado</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-50 text-slate-600 border border-slate-200/60 font-medium font-mono text-[10px]">Comité Interno</span>
                       </td>
                       <td class="p-3">
-                        <span class="px-2 py-0.5 rounded-full text-[9px] font-bold bg-slate-50 text-slate-500 border border-slate-200">Baja</span>
+                        <span class="px-2 py-0.5 rounded-full text-[9px] font-bold bg-slate-50 text-slate-500 border border-slate-200">Resuelto</span>
                       </td>
                     </tr>
                   </tbody>
@@ -179,6 +198,15 @@
                   <span class="text-xs font-bold text-slate-850 font-mono">IA RESUMEN E INSIGHTS</span>
                 </div>
                 <span class="text-[9px] font-mono bg-almond-cream/40 px-2 py-0.5 rounded text-slate-800 border border-dust-grey/50">Caso Activo #CFL-173</span>
+              </div>
+
+              <!-- Referral Banner Indicator -->
+              <div class="p-2.5 bg-emerald-50 border border-emerald-200/60 rounded-lg flex items-center justify-between text-[11px] text-emerald-800">
+                <div class="flex items-center gap-2 font-semibold">
+                  <span class="h-2 w-2 rounded-full bg-emerald-600 animate-pulse"></span>
+                  <span>Derivado al Equipo Experto Legal</span>
+                </div>
+                <span class="font-mono text-[9px] px-1.5 py-0.5 bg-emerald-100 rounded text-emerald-700 font-bold border border-emerald-250/40">En Análisis</span>
               </div>
 
               <div class="space-y-3">
