@@ -33,58 +33,117 @@
       <!-- App Main Layout -->
       <div class="grid grid-cols-1 lg:grid-cols-12 min-h-[500px]">
         <!-- Sidebar -->
-        <div class="lg:col-span-2 bg-floral-white/40 border-r border-dust-grey/50 p-4 space-y-6">
-          <div class="space-y-1">
-            <span class="px-2 text-[10px] uppercase font-mono tracking-wider text-slate-400 font-bold">Navegación</span>
-            <ul class="space-y-1">
-              <li>
-                <a href="#producto" class="flex items-center gap-2.5 px-2.5 py-2 rounded-md bg-almond-cream/50 text-slate-900 font-semibold text-xs transition">
-                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                  </svg>
-                  Resumen
-                </a>
-              </li>
-              <li>
-                <span class="flex items-center gap-2.5 px-2.5 py-2 rounded-md text-slate-650 text-xs hover:bg-floral-white/80 cursor-not-allowed">
-                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0a2 2 0 01-2 2H6a2 2 0 01-2-2m16 0V9a2 2 0 00-2-2H6a2 2 0 00-2 2v4h16z" />
-                  </svg>
-                  Casos Recibidos
-                </span>
-              </li>
-              <li>
-                <span class="flex items-center gap-2.5 px-2.5 py-2 rounded-md text-slate-650 text-xs hover:bg-floral-white/80 cursor-not-allowed">
-                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 00-2 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                  </svg>
-                  Estadísticas
-                </span>
-              </li>
-            </ul>
+        <div class="lg:col-span-2 bg-floral-white/40 border-r border-dust-grey/50 p-4 flex flex-col justify-between min-h-[580px]">
+          <div class="space-y-6">
+            <!-- Navegación -->
+            <div class="space-y-1">
+              <span class="px-2 text-[10px] uppercase font-mono tracking-wider text-slate-400 font-bold">Navegación</span>
+              <ul class="space-y-1">
+                <li>
+                  <a href="#producto" class="flex items-center gap-2.5 px-2.5 py-2 rounded-md bg-almond-cream/50 text-slate-900 font-semibold text-xs transition">
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                    Resumen
+                  </a>
+                </li>
+                <li>
+                  <span class="flex items-center gap-2.5 px-2.5 py-2 rounded-md text-slate-650 text-xs hover:bg-floral-white/80 cursor-not-allowed">
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0a2 2 0 01-2 2H6a2 2 0 01-2-2m16 0V9a2 2 0 00-2-2H6a2 2 0 00-2 2v4h16z" />
+                    </svg>
+                    Casos Recibidos
+                  </span>
+                </li>
+                <li>
+                  <span class="flex items-center gap-2.5 px-2.5 py-2 rounded-md text-slate-650 text-xs hover:bg-floral-white/80 cursor-not-allowed">
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 00-2 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                    Estadísticas
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Filtros -->
+            <div class="space-y-1">
+              <span class="px-2 text-[10px] uppercase font-mono tracking-wider text-slate-400 font-bold">Filtros</span>
+              <ul class="space-y-1.5 text-xs text-slate-655 px-2.5">
+                <li class="flex items-center gap-2">
+                  <span class="h-2.5 w-2.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
+                  <span>Derivados (ConfiaLine)</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="h-2.5 w-2.5 rounded-full bg-amber-500 flex-shrink-0"></span>
+                  <span>Interna</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="h-2.5 w-2.5 rounded-full bg-slate-300 flex-shrink-0"></span>
+                  <span>Resueltos</span>
+                </li>
+              </ul>
+            </div>
           </div>
 
-          <div class="space-y-1">
-            <span class="px-2 text-[10px] uppercase font-mono tracking-wider text-slate-400 font-bold">Filtros</span>
-            <ul class="space-y-1.5 text-xs text-slate-655 px-2.5">
-              <li class="flex items-center gap-2">
-                <span class="h-2.5 w-2.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
-                <span>Derivados (Expertos)</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="h-2.5 w-2.5 rounded-full bg-amber-500 flex-shrink-0"></span>
-                <span>Internos (Comité)</span>
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="h-2.5 w-2.5 rounded-full bg-slate-300 flex-shrink-0"></span>
-                <span>Resueltos</span>
-              </li>
-            </ul>
+          <!-- Configuración y Cerrar Sesión -->
+          <div class="space-y-4 pt-4 border-t border-dust-grey/30">
+            <div class="space-y-1">
+              <span class="px-2 text-[10px] uppercase font-mono tracking-wider text-slate-400 font-bold">Configuración</span>
+              <ul class="space-y-0.5">
+                <li>
+                  <a href="#formularios" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-md text-slate-650 hover:text-slate-900 hover:bg-floral-white/85 text-xs transition">
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    Formularios
+                  </a>
+                </li>
+                <li>
+                  <span class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-md text-slate-650 text-xs hover:bg-floral-white/85 cursor-not-allowed">
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                    Control de acceso
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="pt-1">
+              <a href="/" class="flex items-center gap-2.5 px-2.5 py-1.5 rounded-md text-red-655 hover:text-red-805 hover:bg-red-50/50 text-xs font-semibold transition">
+                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                </svg>
+                Cerrar sesión
+              </a>
+            </div>
           </div>
         </div>
 
         <!-- Main Dashboard View -->
         <div class="lg:col-span-10 p-6 space-y-6">
+          <!-- App Header -->
+          <div class="flex justify-between items-center pb-4 border-b border-dust-grey/40">
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 font-sans">Panel de Control</h3>
+              <p class="text-xs text-slate-500">Resumen y estado de las denuncias recibidas</p>
+            </div>
+            <!-- User Profile (Sergio Rubilar) -->
+            <div class="flex items-center gap-3 bg-floral-white/50 px-3.5 py-1.5 rounded-lg border border-dust-grey/30">
+              <div class="text-right hidden sm:block font-sans">
+                <span class="block text-xs font-bold text-slate-800">Sergio Rubilar</span>
+                <span class="block text-[10px] text-slate-500 font-mono">Gestor de Compliance</span>
+              </div>
+              <div class="h-8 w-8 rounded-full bg-slate-200 border border-dust-grey overflow-hidden flex items-center justify-center flex-shrink-0 shadow-sm relative">
+                <!-- User Profile Photo icon representation -->
+                <svg class="h-5 w-5 text-slate-550" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                </svg>
+                <span class="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-emerald-500 border-2 border-white"></span>
+              </div>
+            </div>
+          </div>
           <!-- Stats Row -->
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <!-- Stat 1 -->
