@@ -38,10 +38,10 @@ const faqSchema = {
 };
 ---
 <section id="faq" class="py-20 sm:py-28 bg-white border-t border-dust-grey/40 relative">
-  <div class="max-w-[1100px] mx-auto px-4 sm:px-6 relative z-10">
+  <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <!-- Header -->
     <div class="text-center max-w-3xl mx-auto mb-16 sm:mb-20 reveal">
-      <p class="text-xs font-semibold uppercase tracking-wider text-slate-850 mb-3 font-mono">Dudas Frecuentes</p>
+      <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 mb-3 font-mono">Dudas Frecuentes</p>
       <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight text-balance mb-4 font-sans">
         Preguntas frecuentes sobre compliance y el canal ético
       </h2>
@@ -51,7 +51,7 @@ const faqSchema = {
     </div>
 
     <!-- Accordion Group -->
-    <div class="space-y-4 max-w-3xl mx-auto reveal reveal-delay-100">
+    <div class="space-y-4 max-w-4xl mx-auto reveal reveal-delay-100">
       {faqs.map((item, index) => (
         <details class="group border border-dust-grey/60 rounded-xl bg-floral-white open:border-almond-cream-hover overflow-hidden shadow-sm transition-all duration-300" name="faq-accordion" open={index === 0}>
           <summary class="flex justify-between items-center cursor-pointer p-5 sm:p-6 select-none list-none [&::-webkit-details-marker]:hidden">
