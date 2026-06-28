@@ -10,5 +10,6 @@
 - [x] Optimizar la descarga de imágenes (escalado de logotipos y paneles a resoluciones nativas optimizadas de 310px, 270px y 800px)
 - [x] Agregar etiquetas label de accesibilidad (clase sr-only) a los campos de selección de color en `FormBuilder.astro`
 - [x] Configurar inlining de CSS en `astro.config.mjs` para eliminar las peticiones críticas de red bloqueantes
+- [x] Aumentar el factor de compresión del logotipo de ConfiaLine (`width={200}` y `quality={70}`) en `Navbar.astro` y `Footer.astro`
 - [x] Ejecutar la compilación del proyecto (`npm run build`) para verificar la correcta integración
 - [x] Documentar los cambios en el walkthrough
