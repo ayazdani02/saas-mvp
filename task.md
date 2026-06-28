@@ -1,0 +1,13 @@
+- [x] Rediseñar `src/components/ExpertTeam.astro` utilizando la estructura asimétrica (columna sticky e items del equipo)
+- [x] Eliminar los textos de bajada (descripciones) de cada perfil para dejar un diseño minimalista de solo nombres
+- [x] Eliminar el texto "Consulta personalizada" de todos los planes de precios en `Pricing.astro`
+- [x] Eliminar los recuadros de ventajas redundantes situados debajo del panel de control en `ProductDashboard.astro`
+- [x] Acortar y hacer más directo el texto en la sección de creación de formularios en `FormBuilder.astro`
+- [x] Unificar el ancho máximo de todas las secciones a `max-w-[1400px]` en `Security.astro`, `Pricing.astro` y `FAQ.astro`
+- [x] Corregir la consistencia cromática de las etiquetas de sección a `text-emerald-700 font-bold` en `Security.astro` y `FAQ.astro`
+- [x] Definir la animación premium `reveal-scale` en `global.css` e integrarla en el IntersectionObserver en `Layout.astro`
+- [x] Aplicar animaciones de scroll y retardos escalonados (staggered) en todas las secciones principales, tarjetas de equipo y tarjetas de planes
+- [x] Optimizar la descarga de imágenes (escalado de logotipos y paneles a resoluciones nativas optimizadas de 310px, 270px y 800px)
+- [x] Agregar etiquetas label de accesibilidad (clase sr-only) a los campos de selección de color en `FormBuilder.astro`
+- [x] Ejecutar la compilación del proyecto (`npm run build`) para verificar la correcta integración
+- [x] Documentar los cambios en el walkthrough
