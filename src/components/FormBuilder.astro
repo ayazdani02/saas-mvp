@@ -135,10 +135,12 @@
                   <div class="flex items-center gap-1 pl-1.5 border-l border-slate-200 flex-grow justify-end">
                     <!-- Rainbow color picker pill -->
                     <div class="relative h-4 w-4 rounded-full bg-[linear-gradient(135deg,#ff0000,#ffff00,#00ff00,#00ffff,#0000ff,#ff00ff,#ff0000)] border border-slate-300 cursor-pointer flex items-center justify-center overflow-hidden hover:scale-105 transition-transform" title="Selector de Color Personalizado">
+                      <label for="brand-color-picker" class="sr-only">Seleccionar color de marca</label>
                       <input type="color" id="brand-color-picker" class="absolute inset-0 opacity-0 w-full h-full cursor-pointer" value="#047857" />
                       <span id="picker-check" class="text-white text-[7px] font-bold pointer-events-none hidden">✓</span>
                     </div>
                     <!-- Hex input indicator -->
+                    <label for="brand-color-hex" class="sr-only">Código hexadecimal de color de marca</label>
                     <input type="text" id="brand-color-hex" class="text-[8px] font-mono text-slate-700 bg-white border border-dust-grey/70 px-1 py-0.5 rounded w-[56px] text-center focus:outline-none focus:border-slate-400 select-all" value="#047857" placeholder="#047857" />
                   </div>
                 </div>
