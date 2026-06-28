@@ -9,5 +9,6 @@
 - [x] Aplicar animaciones de scroll y retardos escalonados (staggered) en todas las secciones principales, tarjetas de equipo y tarjetas de planes
 - [x] Optimizar la descarga de imágenes (escalado de logotipos y paneles a resoluciones nativas optimizadas de 310px, 270px y 800px)
 - [x] Agregar etiquetas label de accesibilidad (clase sr-only) a los campos de selección de color en `FormBuilder.astro`
+- [x] Configurar inlining de CSS en `astro.config.mjs` para eliminar las peticiones críticas de red bloqueantes
 - [x] Ejecutar la compilación del proyecto (`npm run build`) para verificar la correcta integración
 - [x] Documentar los cambios en el walkthrough
