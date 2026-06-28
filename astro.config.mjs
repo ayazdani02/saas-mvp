@@ -22,6 +22,9 @@ const SITE =
 // https://astro.build/config
 export default defineConfig({
   site: SITE,
+  build: {
+    inlineStylesheets: 'always'
+  },
   integrations: [
     sitemap({
       // Keep the 404 helper out of the sitemap.
