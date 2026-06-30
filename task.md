@@ -11,8 +11,7 @@
 - [x] Agregar etiquetas label de accesibilidad (clase sr-only) a los campos de selección de color en `FormBuilder.astro`
 - [x] Configurar inlining de CSS en `astro.config.mjs` para eliminar las peticiones críticas de red bloqueantes
 - [x] Aumentar el factor de compresión del logotipo de ConfiaLine (`width={200}` y `quality={70}`) en `Navbar.astro` y `Footer.astro`
-- [x] Separar la composición del Hero en 3 sub-imágenes transparentes sin bordes en formato PNG sin pérdida (calidad 95)
-- [x] Maquetar el Hero en HTML dinámico posicionando los avatares e implementando las burbujas de notificación y flechas SVG de manera vectorial y nitidez absoluta
+- [x] Restaurar la maquetación y las fotografías originales del Hero (colaboradora a la izquierda, gestor a la derecha y tarjeta superpuesta)
 - [x] Ejecutar la compilación del proyecto (`npm run build`) para verificar la correcta integración
 - [x] Iniciar el servidor local de desarrollo (`npm run dev`)
 - [x] Documentar los cambios en el walkthrough
