@@ -1,6 +1,8 @@
 ---
 import { Image } from 'astro:assets';
-import heroUnified from '../assets/hero_unified.png';
+import heroLeft from '../assets/hero_left.png';
+import heroCenter from '../assets/hero_center.png';
+import heroRight from '../assets/hero_right.png';
 ---
 <section class="relative pt-24 pb-16 sm:pt-32 sm:pb-24 lg:pt-40 lg:pb-32 overflow-hidden bg-white">
   
@@ -29,24 +31,97 @@ import heroUnified from '../assets/hero_unified.png';
       </div>
     </div>
 
-    <!-- Unified visual at full width (no grid pattern background) -->
-    <div class="relative w-full max-w-[1250px] mx-auto reveal reveal-delay-200">
-      <!-- Glow effect behind widget -->
-      <div class="absolute -inset-4 bg-almond-cream/10 rounded-3xl blur-3xl pointer-events-none"></div>
+    <!-- Responsive visual container -->
+    <div class="relative w-full max-w-[1300px] mx-auto mt-12 sm:mt-16">
+      
+      <!-- Desktop layout: Premium floating and overlapping elements -->
+      <div class="relative min-h-[520px] w-full hidden lg:block select-none">
+        <!-- Glow effect behind mockup -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -inset-10 bg-almond-cream/5 rounded-[40px] blur-3xl pointer-events-none"></div>
 
-      <!-- Image container with border and shadow -->
-      <div class="relative rounded-2xl border border-dust-grey/80 overflow-hidden shadow-md bg-white">
-        <Image
-          src={heroUnified}
-          alt="Panel de control de ConfiaLine y flujos del informante y del gestor de compliance"
-          width={1200}
-          format="webp"
-          quality={80}
-          loading="eager"
-          fetchpriority="high"
-          class="w-full h-auto object-cover object-center"
-        />
+        <!-- Left: Reporter visual -->
+        <div class="absolute left-[-2%] top-[30px] w-[23%] z-20 reveal reveal-delay-300">
+          <Image
+            src={heroLeft}
+            alt="Canal del informante anónimo"
+            width={240}
+            format="png"
+            quality={95}
+            loading="eager"
+            fetchpriority="high"
+            class="w-full h-auto drop-shadow-[0_10px_20px_rgba(0,0,0,0.03)]"
+          />
+        </div>
+
+        <!-- Center: Dashboard Mockup -->
+        <div class="absolute left-1/2 top-0 -translate-x-1/2 w-[58%] z-10 reveal-scale reveal-delay-200">
+          <Image
+            src={heroCenter}
+            alt="Panel de control de ConfiaLine"
+            width={750}
+            format="png"
+            quality={95}
+            loading="eager"
+            fetchpriority="high"
+            class="w-full h-auto drop-shadow-[0_12px_30px_rgba(0,0,0,0.05)]"
+          />
+        </div>
+
+        <!-- Right: Compliance Officer desk -->
+        <div class="absolute right-[-2%] bottom-[10px] w-[25%] z-20 reveal reveal-delay-400">
+          <Image
+            src={heroRight}
+            alt="Gestión de compliance e investigación"
+            width={280}
+            format="png"
+            quality={95}
+            loading="eager"
+            fetchpriority="high"
+            class="w-full h-auto drop-shadow-[0_10px_20px_rgba(0,0,0,0.03)]"
+          />
+        </div>
       </div>
+
+      <!-- Mobile/Tablet layout: Stacked clean grid representation -->
+      <div class="block lg:hidden space-y-6 px-4">
+        <!-- Dashboard mockup -->
+        <div class="w-full bg-white rounded-2xl border border-dust-grey/60 p-1 shadow-sm reveal reveal-delay-100">
+          <Image
+            src={heroCenter}
+            alt="Panel de control de ConfiaLine"
+            width={600}
+            format="png"
+            quality={90}
+            loading="eager"
+            class="w-full h-auto rounded-xl"
+          />
+        </div>
+
+        <!-- Secondary cards side-by-side -->
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-slate-50/50 rounded-2xl border border-dust-grey/50 p-2 sm:p-3 flex items-center justify-center reveal reveal-delay-200">
+            <Image
+              src={heroLeft}
+              alt="Canal del informante anónimo"
+              width={200}
+              format="png"
+              quality={90}
+              class="w-full h-auto max-w-[140px] sm:max-w-[180px]"
+            />
+          </div>
+          <div class="bg-slate-50/50 rounded-2xl border border-dust-grey/50 p-2 sm:p-3 flex items-center justify-center reveal reveal-delay-300">
+            <Image
+              src={heroRight}
+              alt="Gestión de compliance"
+              width={200}
+              format="png"
+              quality={90}
+              class="w-full h-auto max-w-[140px] sm:max-w-[180px]"
+            />
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
