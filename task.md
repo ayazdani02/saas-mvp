@@ -11,5 +11,6 @@
 - [x] Agregar etiquetas label de accesibilidad (clase sr-only) a los campos de selección de color en `FormBuilder.astro`
 - [x] Configurar inlining de CSS en `astro.config.mjs` para eliminar las peticiones críticas de red bloqueantes
 - [x] Aumentar el factor de compresión del logotipo de ConfiaLine (`width={200}` y `quality={70}`) en `Navbar.astro` y `Footer.astro`
+- [x] Reemplazar la maqueta y las imágenes antiguas del Hero por la imagen gráfica unificada `hero_unified.png`
 - [x] Ejecutar la compilación del proyecto (`npm run build`) para verificar la correcta integración
 - [x] Documentar los cambios en el walkthrough
