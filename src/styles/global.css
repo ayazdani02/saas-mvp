@@ -14,6 +14,19 @@
   --color-bg-card: #fbf6ef; /* Floral White */
   --color-bg-card-alt: #ead7c3; /* Almond Cream */
   --color-border-accent: #dce0d9; /* Dust Grey */
+
+  /* Override emerald with our premium coral-pink palette based on the user's badge */
+  --color-emerald-50: #fff5f3;
+  --color-emerald-100: #ffe3de;
+  --color-emerald-200: #ffcac1;
+  --color-emerald-300: #ffa799;
+  --color-emerald-400: #ff826d;
+  --color-emerald-500: #fa8b76;
+  --color-emerald-600: #e0705c;
+  --color-emerald-700: #c45441;
+  --color-emerald-800: #a23f2f;
+  --color-emerald-900: #863427;
+  --color-emerald-950: #4a1810;
 }
 
 @layer base {
