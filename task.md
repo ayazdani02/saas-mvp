@@ -11,7 +11,8 @@
 - [x] Agregar etiquetas label de accesibilidad (clase sr-only) a los campos de selección de color en `FormBuilder.astro`
 - [x] Configurar inlining de CSS en `astro.config.mjs` para eliminar las peticiones críticas de red bloqueantes
 - [x] Aumentar el factor de compresión del logotipo de ConfiaLine (`width={200}` y `quality={70}`) en `Navbar.astro` y `Footer.astro`
-- [x] Restaurar la maquetación y las fotografías originales del Hero (colaboradora a la izquierda, gestor a la derecha y tarjeta superpuesta)
+- [x] Cambiar el color secundario verde por el rosa coral/rojo (#fa8b76) de forma global en `@theme`
+- [x] Incorporar e integrar el seguimiento confidencial de denuncias (denunciante y empresa) en ProductDashboard, Security y FAQ
 - [x] Ejecutar la compilación del proyecto (`npm run build`) para verificar la correcta integración
 - [x] Iniciar el servidor local de desarrollo (`npm run dev`)
 - [x] Documentar los cambios en el walkthrough
